@@ -12,7 +12,6 @@ Built and tested against live NSE options data.
 |--------|-------------|
 | `black_scholes_call / put` | Theoretical price for European call and put options |
 | `implied_volatility_brent` | Backs out IV from market price using Brent's root-finding method |
-| `greeks` | Computes Delta, Gamma, Vega, Theta |
 
 ---
 
@@ -45,17 +44,6 @@ $$d_1 = \frac{\ln(S/K) + (r + \frac{\sigma^2}{2})T}{\sigma\sqrt{T}}, \quad d_2 =
 
 ---
 
-## Greeks
-
-| Greek | Meaning | Formula |
-|-------|---------|---------|
-| **Delta** | Sensitivity of option price to spot price | $N(d_1)$ for call, $N(d_1)-1$ for put |
-| **Gamma** | Rate of change of Delta | $\frac{N'(d_1)}{S\sigma\sqrt{T}}$ |
-| **Vega** | Sensitivity to volatility (per 1% move) | $S \cdot N'(d_1) \cdot \sqrt{T} / 100$ |
-| **Theta** | Time decay (per calendar day) | See notebook |
-
----
-
 ## Model Assumptions & Limitations
 
 Black-Scholes makes assumptions that do not hold in real markets. These are documented honestly:
@@ -77,7 +65,6 @@ This engine is accurate for pricing near-ATM European options. Edge cases (deep 
   Market Price     : ₹20.40
   BS Price (IV)    : ₹20.40
   Implied Vol      : 19.3%
-  Greeks           : {'Delta': 0.6231, 'Gamma': 0.0142, 'Vega': 0.0381, 'Theta': -0.8214}
 
 ── Put-Call Parity Verification ──
   Parity Holds     : True
@@ -102,8 +89,4 @@ This engine is accurate for pricing near-ATM European options. Edge cases (deep 
 ---
 
 ## Author
-
-**Rakshit Gandhi**  
-B.Sc. Information Technology | GLSU Ahmedabad  
-Focused on quantitative finance, derivatives pricing, and systematic strategy development.  
-[rakshitgandhi184@gmail.com](mailto:rakshitgandhi184@gmail.com)
+**Rakshit**  
